@@ -1,7 +1,20 @@
 language: python
 python:
-  - "3.10-dev"
+- 3.10-dev
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - pytest
+- pytest
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: AKIAXZEFIFAEMWW7K5EF
+  secret_access_key:
+    secure: EB4uwTeCdujO5NT6UnQ6N4jKWGql1ZzHaSYBHJ6qT9Q2oUi/EVQoLt0HyAoo8vGnVFe05fv50nkrWNIVIs1dKYjMEIRDthbjie6TWkAQXcpTSGaJSE/Ulv/GDVBJ2VP2rVT8RZwVpKgxepqVDGKxFyDPcIaTJiDur6O3CN9/J8L6x/enpfF2RQDQEd5M1IEH40+9QupEYBo7gLc6LNplyJJsBkMwUwHYYdXUBfyDducyeoujGq70GGYWVjvN8WUnvhMVbJaZDsFQupJ8T76v9ib6bkobXnulaBVPoU6hxdcU9kvs2nbH++XfcLH5PRG1sh2fv+4vMV67B+7rxdZLbrc0DbqxUAlkIsBI6FEaBm9W6TK0qFfxoCqziDAPh45m49Z9Kjed3ECkjMPMrWUtIdUKysF2GpmF/C/A8RUGp9Kh+/Ry9DCulNkY0dqxLlPRJUvTrLEKDzWenAmTXwTCYLfyk4oNm5obVOTqaf10rLBRChdgFrcFjWMFH0qatjq72WG5dm4nDQkONPc6fuII0ORq5sDy6ZpeXluWcCyR/fEH/eI22oCYTX/Ai/VznbBvFcM02xKZEA+PE/nWD2TGsRoQNBxq9GFOLk4xP7tBcGCwgM/xe3LZAgJTBFnhYh9yr2I+7Ida+hqT/Ycrrk0V+flTFSKAJ+jXF4YYOLm9MAM=
+  region: us-west-2
+  app: django-tutorial
+  env: django-env
+  bucket_name: personal-assignment
+  on:
+    repo: frankx2023/swe1-poll-application
+    branch: main
+  skip_cleanup: 'true'
