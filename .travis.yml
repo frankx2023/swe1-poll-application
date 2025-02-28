@@ -13,7 +13,7 @@ deploy:
   region: us-west-2
   app: django-tutorial
   env: django-env
-  bucket_name: personal-assignment
+  bucket_name: elasticbeanstalk-us-west-2-535002884104
   on:
     repo: frankx2023/swe1-poll-application
     branch: main
