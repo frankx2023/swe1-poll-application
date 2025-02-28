@@ -18,3 +18,6 @@ deploy:
     repo: frankx2023/swe1-poll-application
     branch: main
   skip_cleanup: 'true'
+before_install:
+  - gem install nokogiri --platform=ruby
+
