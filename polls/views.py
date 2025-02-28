@@ -7,7 +7,6 @@ from django.views import generic
 from .models import Choice, Question
 
 
-
 from .models import Question
 
 
@@ -28,6 +27,7 @@ class DetailView(generic.DetailView):
 class ResultsView(generic.DetailView):
     model = Question
     template_name = "polls/results.html"
+
 
 # ...
 def vote(request, question_id):
