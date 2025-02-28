@@ -19,5 +19,5 @@ deploy:
     branch: main
   skip_cleanup: 'true'
 before_install:
+  - bundle config set force_ruby_platform true
   - gem install nokogiri --platform=ruby
-
